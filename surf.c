@@ -565,6 +565,7 @@ loaduri(Client *c, const Arg *a)
 	if (g_str_has_prefix(uri, "http://")  ||
 	    g_str_has_prefix(uri, "https://") ||
 	    g_str_has_prefix(uri, "file://")  ||
+	    g_str_has_prefix(uri, "data:")    ||
 	    g_str_has_prefix(uri, "about:")) {
 		url = g_strdup(uri);
 	} else {
