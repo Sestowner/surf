@@ -315,7 +315,7 @@ die(const char *errstr, ...)
 void
 usage(void)
 {
-	die("usage: surf [-bBdDfFgGiIkKmMnNpPsStTvwxX]\n"
+	die("usage: surf [-bBdDEfFgGiIkKmMnNpPsStTvwxX]\n"
 	    "[-a cookiepolicies ] [-c cookiefile] [-C stylefile] [-e xid]\n"
 	    "[-r scriptfile] [-u useragent] [-z zoomlevel] [uri]\n");
 }
@@ -2022,6 +2022,10 @@ main(int argc, char *argv[])
 		break;
 	case 'e':
 		embed = strtol(EARGF(usage()), NULL, 0);
+		break;
+	case 'E':
+		defconfig[Ephemeral].val.i = 1;
+		defconfig[Ephemeral].prio = 2;
 		break;
 	case 'f':
 		defconfig[RunInFullscreen].val.i = 0;
